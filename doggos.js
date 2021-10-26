@@ -2,9 +2,14 @@ const DOG_URL = "https://dog.ceo/api/breeds/image/random";
 
 const doggos = document.querySelector(".doggos");
 
+function clearBox(elementID)
+{
+    document.getElementById(elementID).innerHTML = "";
+}
+
 function addNewDoggo() {
     const promise = fetch(DOG_URL);
-
+    clearBox('random-doggo');
     promise
         .then(function(response) {
             const processingPromise = response.json();
@@ -68,7 +73,7 @@ function addNewDoggoByBreed() {
     var breed_url = "https://dog.ceo/api/breed/" + value + "/images/random";
 
     const promise = fetch(breed_url);
-
+    clearBox('breed');
     promise
         .then(function(response) {
             const processingPromise = response.json();
