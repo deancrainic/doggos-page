@@ -3,13 +3,14 @@
 }
 
 body {
-    background-image: url("https://images.unsplash.com/photo-1585314062604-1a357de8b000?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=871&q=80");
+    background-color: #fffbe4;
+    margin: 20px 80px 20px 80px;
 }
 
 .main-title {
     font-size: 50px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: white;
+    color: #d08c60;
     text-align: center;
     font-weight: bold;
 }
@@ -17,7 +18,7 @@ body {
 .second-title {
     font-size: 30px;
     font-family: monospace;
-    color: chocolate;
+    color: #d08c60;
 }
 
 .add-doggo, .add-doggo-breed {
@@ -44,17 +45,15 @@ body {
     margin-top: 15px;
     border: 2px solid black;
     display: flex;
-    flex-flow: row wrap;
     justify-content: space-evenly;
-    align-self: stretch;
     width: 100%;
-    background-color: rgba(255, 235, 205, 0.336);
+    background-color: rgba(252, 201, 126, 0.336);
 }
 
 .breed-selector-title {
     font-size: 25px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: peru;
+    color: #d08c60;
 }
 
 .breed-selector {
@@ -63,8 +62,8 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     padding-top: 1px;
     padding-bottom: 1px;
-    background-color: #faeb95;
-    color: chocolate;
+    background-color: #fff8d3;
+    color: #8a5a44;
     border-radius: 2px;
     cursor: pointer;
 }

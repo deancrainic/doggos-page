@@ -7,9 +7,17 @@ function clearBox(elementID)
     document.getElementById(elementID).innerHTML = "";
 }
 
-function addNewDoggo() {
+function addNewDoggo(event) {
+    event.preventDefault();
+
     const promise = fetch(DOG_URL);
     clearBox('random-doggo');
+    
+    const loadingGif = document.createElement("img");
+    loadingGif.src = './loading-buffering.gif';
+    loadingGif.alt = 'Loading';
+    doggos.appendChild(loadingGif);
+    
     promise
         .then(function(response) {
             const processingPromise = response.json();
@@ -19,11 +27,12 @@ function addNewDoggo() {
             const img = document.createElement("img");
             img.src = processedResponse.message;
             img.alt = "Doggo";
+            img.style.maxWidth = "500px";
+            img.style.maxHeight = "500px";
+            clearBox('random-doggo');
             doggos.appendChild(img);
         })
 }
-
-document.querySelector(".add-doggo").addEventListener("click", addNewDoggo);
 
 const BREEDS_LIST_URL = "https://dog.ceo/api/breeds/list/all";
 
@@ -66,7 +75,9 @@ populateSelectList();
 
 const breedDoggos = document.getElementById('breed');
 
-function addNewDoggoByBreed() {
+function addNewDoggoByBreed(event) {
+    event.preventDefault();
+
     var index = breedsSelector.selectedIndex;
     var value = breedsSelector.options[index].value;
     
@@ -74,6 +85,12 @@ function addNewDoggoByBreed() {
 
     const promise = fetch(breed_url);
     clearBox('breed');
+
+    const loadingGif = document.createElement("img");
+    loadingGif.src = './loading-buffering.gif';
+    loadingGif.alt = 'Loading';
+    breedDoggos.appendChild(loadingGif);
+
     promise
         .then(function(response) {
             const processingPromise = response.json();
@@ -83,9 +100,10 @@ function addNewDoggoByBreed() {
             const img = document.createElement("img");
             img.src = processedResponse.message;
             img.alt = "Doggo";
+            img.style.maxWidth = "500px";
+            img.style.maxHeight = "500px";
+            img.className = "loading";
+            clearBox('breed');
             breedDoggos.appendChild(img);
         })
-
 }
-
-document.querySelector(".add-doggo-breed").addEventListener("click", addNewDoggoByBreed);

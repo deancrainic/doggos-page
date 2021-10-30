@@ -10,17 +10,16 @@
 <body>
     <h1 class="main-title">Doggos</h1>
     <h2 class="second-title">You love all doggos so you don't mind seeing all breeds</h2>
-    <button class="add-doggo">Add doggo</button>
+    <button onclick="addNewDoggo(event)" class="add-doggo" type="button">Add doggo</button>
     <div id="random-doggo" class="doggos">
     </div>
     <h2 class="second-title">You want to see your favourite breed only</h2>
     <label for="breed-select" class="breed-selector-title">Choose dog breed:</label>
     <select name="breeds" id="breed-select" class="breed-selector">
     </select>
-    <button class="add-doggo-breed">Add doggo</button>
+    <button onclick="setTimeout(addNewDoggoByBreed(event), 50000)" class="add-doggo-breed" type="button">Add doggo</button>
     <div id="breed" class="doggos">
     </div>
-    <h2 class="second-title">How can you not love dogs?</h2>
     <script src="./doggos.js"></script>
 </body>
 </html>
