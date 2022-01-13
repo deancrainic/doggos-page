@@ -19,11 +19,8 @@ function addNewDoggo(event) {
     doggos.appendChild(loadingGif);
     
     promise
-        .then(function(response) {
-            const processingPromise = response.json();
-            return processingPromise;
-        })
-        .then(function(processedResponse) {
+        .then(response => response.json())
+        .then(processedResponse => {
             const img = document.createElement("img");
             img.src = processedResponse.message;
             img.alt = "Doggo";
@@ -43,11 +40,8 @@ function populateSelectList() {
     let breedName;
 
     promise
-        .then(function(response) {
-            const processingPromise = response.json();
-            return processingPromise;
-        })
-        .then(function(processedResponse) {
+        .then(response => response.json())
+        .then(processedResponse => {
             var breedDict = processedResponse.message;
 
             for(var mainBreed in breedDict) {
